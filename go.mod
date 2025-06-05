@@ -1,4 +1,4 @@
-module github.com/belong-inc/go-hubspot
+module github.com/datenlotse/go-hubspot
 
 go 1.16
 
