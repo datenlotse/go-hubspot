@@ -25,6 +25,15 @@ type CrmTicketsServivceOp struct {
 
 var _ CrmTicketsServivce = (*CrmTicketsServivceOp)(nil)
 
+type Associations struct {
+	Results []AssociatedId `json:"results,omitempty"`
+}
+
+type AssociatedId struct {
+	Id *HsStr `json:"id,omitempty"`
+	Type *HsStr `json:"type,omitempty"`
+}
+
 type CrmTicket struct {
 	Id                    *HsStr                 `json:"id,omitempty"`
 	Properties            map[string]interface{} `json:"properties,omitempty"`
@@ -33,6 +42,7 @@ type CrmTicket struct {
 	UpdatedAt             *HsTime                `json:"updatedAt,omitempty"`
 	Archived              *HsBool                `json:"archived,omitempty"`
 	ArchivedAt            *HsTime                `json:"archivedAt,omitempty"`
+	Associations          *Associations          `json:"associations,omitempty"`
 }
 
 type CrmTicketsPagingData struct {
